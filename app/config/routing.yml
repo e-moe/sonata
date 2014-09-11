@@ -1,0 +1,5 @@
+levi9_sonata:
+    resource: "@Levi9SonataBundle"
+    type:     annotation
+    prefix:   /
+
