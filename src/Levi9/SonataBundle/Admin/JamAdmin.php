@@ -30,7 +30,6 @@ class JamAdmin extends Admin
         $subject = $this->getSubject();
 
         if (!$subject->getId()) {
-            // The thumbnail field will only be added when the edited item is created
             $formMapper->add(static::FIELD_AMOUNT, 'integer', array(
                 'mapped' => false,
                 'data' => 1,
