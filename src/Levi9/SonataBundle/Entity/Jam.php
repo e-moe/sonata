@@ -115,6 +115,4 @@ class Jam
     {
         return $this->year;
     }
-
-
 }

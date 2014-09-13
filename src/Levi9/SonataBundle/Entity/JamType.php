@@ -89,6 +89,4 @@ class JamType
     {
         return $this->jam;
     }
-
-
 }
