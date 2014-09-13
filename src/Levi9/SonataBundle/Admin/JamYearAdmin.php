@@ -9,6 +9,9 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class JamYearAdmin extends Admin
 {
+    /** @var string route */
+    protected $baseRoutePattern = 'years';
+
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {

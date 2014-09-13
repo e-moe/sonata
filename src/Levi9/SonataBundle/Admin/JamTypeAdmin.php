@@ -9,6 +9,9 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class JamTypeAdmin extends Admin
 {
+    /** @var string route */
+    protected $baseRoutePattern = 'types';
+
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {

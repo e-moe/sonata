@@ -10,7 +10,10 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class JamAdmin extends Admin
 {
-    /** @var  JamService */
+    /** @var string route */
+    protected $baseRoutePattern = 'jam';
+
+    /** @var JamService */
     protected $jamService;
 
     const FIELD_AMOUNT = 'amount';
@@ -42,6 +45,7 @@ class JamAdmin extends Admin
         $datagridMapper
             ->add('type.name')
             ->add('year.year')
+            ->add('comment')
         ;
     }
 

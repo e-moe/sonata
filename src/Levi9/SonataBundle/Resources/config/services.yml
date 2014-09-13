@@ -31,7 +31,7 @@ services:
     sonata.admin.jam:
         class: Levi9\SonataBundle\Admin\JamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Jam" }
+            - { name: sonata.admin, manager_type: orm, group: "Granny's Jam Delicious", label: "Jam" }
         arguments:
             - ~
             - Levi9\SonataBundle\Entity\Jam

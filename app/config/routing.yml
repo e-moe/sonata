@@ -1,13 +1,8 @@
 levi9_sonata:
-    resource: "@Levi9SonataBundle"
-    type:     annotation
-    prefix:   /
-
-admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
+    prefix: /
 
 _sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /admin
+    prefix: /
