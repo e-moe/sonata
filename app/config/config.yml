@@ -69,6 +69,9 @@ swiftmailer:
     spool:     { type: memory }
 
 # Sonata admin bundle
+sonata_admin:
+    title: Jam Storage
+
 sonata_block:
     default_contexts: [cms]
     blocks:

@@ -2,6 +2,35 @@ parameters:
 #    levi9_sonata.example.class: Levi9\SonataBundle\Example
 
 services:
-#    levi9_sonata.example:
-#        class: %levi9_sonata.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sonata.admin.jam_type:
+        class: Levi9\SonataBundle\Admin\JamTypeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Enumerations", label: "Jam Type" }
+        arguments:
+            - ~
+            - Levi9\SonataBundle\Entity\JamType
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataBundle]]
+
+    sonata.admin.jam_year:
+        class: Levi9\SonataBundle\Admin\JamYearAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Enumerations", label: "Jam Year" }
+        arguments:
+            - ~
+            - Levi9\SonataBundle\Entity\JamYear
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataBundle]]
+
+    sonata.admin.jam:
+        class: Levi9\SonataBundle\Admin\JamAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Jam" }
+        arguments:
+            - ~
+            - Levi9\SonataBundle\Entity\Jam
+            - ~
+        calls:
+            - [ setTranslationDomain, [SonataBundle]]
