@@ -45,6 +45,14 @@ class Jam
      */
     protected $year;
 
+    public function __toString()
+    {
+        if (!$this->getId()) {
+            return 'Jam';
+        }
+        return sprintf('#%d: %s', $this->getId(), $this->getType()->getName());
+    }
+
     /**
      * Get id
      *

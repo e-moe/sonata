@@ -13,6 +13,8 @@ class JamAdmin extends Admin
     /** @var  JamService */
     protected $jamService;
 
+    const FIELD_AMOUNT = 'amount';
+
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -21,6 +23,17 @@ class JamAdmin extends Admin
             ->add('year', 'entity', array('class' => 'Levi9\SonataBundle\Entity\JamYear'))
             ->add('comment')
         ;
+
+        $subject = $this->getSubject();
+
+        if (!$subject->getId()) {
+            // The thumbnail field will only be added when the edited item is created
+            $formMapper->add(static::FIELD_AMOUNT, 'integer', array(
+                'mapped' => false,
+                'data' => 1,
+                'attr' => array('min' => 1),
+            ));
+        }
     }
 
     // Fields to be shown on filter forms
@@ -37,7 +50,7 @@ class JamAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id')
-            ->addIdentifier('type.name')
+            ->add('type.name')
             ->add('year.year')
             ->add('comment')
         ;
@@ -58,6 +71,11 @@ class JamAdmin extends Admin
      */
     public function postPersist($entity)
     {
-        $this->jamService->duplicate($entity, 0);
+        $form = $this->getForm();
+        if ($form->offsetExists(static::FIELD_AMOUNT)) {
+            $amount = intval($form->get(static::FIELD_AMOUNT)->getData());
+            $this->jamService->duplicate($entity, $amount - 1);
+        }
+
     }
 }
