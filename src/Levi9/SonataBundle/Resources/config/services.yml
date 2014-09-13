@@ -2,6 +2,10 @@ parameters:
 #    levi9_sonata.example.class: Levi9\SonataBundle\Example
 
 services:
+    sonata.jam:
+        class: Levi9\SonataBundle\Service\JamService
+        arguments: [ @doctrine.orm.entity_manager ]
+
     sonata.admin.jam_type:
         class: Levi9\SonataBundle\Admin\JamTypeAdmin
         tags:
@@ -34,3 +38,4 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [SonataBundle]]
+            - [ setJamService, [@sonata.jam] ]

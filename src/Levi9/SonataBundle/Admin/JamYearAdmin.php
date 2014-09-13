@@ -29,6 +29,7 @@ class JamYearAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('id')
             ->addIdentifier('year')
         ;
     }
