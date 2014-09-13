@@ -26,7 +26,7 @@ class JamYear
     /**
      * @var integer
      *
-     * @ORM\Column(name="year", type="integer")
+     * @ORM\Column(name="year", type="integer", unique=true)
      */
     private $year;
 

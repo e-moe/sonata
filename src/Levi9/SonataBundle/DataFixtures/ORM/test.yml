@@ -1,0 +1,13 @@
+Levi9\SonataBundle\Entity\JamType:
+    JamType{1..5}:
+        name (unique): <city()>
+
+Levi9\SonataBundle\Entity\JamYear:
+    JamYear{1..10}:
+        year (unique): <numberBetween(1990, 2014)>
+
+Levi9\SonataBundle\Entity\Jam:
+    Jam{1..75}:
+        type: @JamType*
+        year: @JamYear*
+        comment: 50%? <sentence()>

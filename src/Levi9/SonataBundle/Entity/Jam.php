@@ -26,7 +26,8 @@ class Jam
     /**
      * @var string
      *
-     * @ORM\Column(name="comment", type="text")
+     * @ORM\Column(name="comment", type="text", nullable=true)
+     * @var string|null
      */
     private $comment;
 
@@ -57,10 +58,10 @@ class Jam
     /**
      * Set comment
      *
-     * @param string $comment
+     * @param string|null $comment
      * @return Jam
      */
-    public function setComment($comment)
+    public function setComment($comment = null)
     {
         $this->comment = $comment;
 
@@ -70,7 +71,7 @@ class Jam
     /**
      * Get comment
      *
-     * @return string 
+     * @return string|null
      */
     public function getComment()
     {
