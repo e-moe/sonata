@@ -39,7 +39,7 @@ class Jam
     protected $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Levi9\SonataBundle\Entity\JamYear", inversedBy="jam")
+     * @ORM\ManyToOne(targetEntity="Levi9\SonataBundle\Entity\JamYear")
      * @ORM\JoinColumn(nullable=false)
      * @var JamYear
      */
