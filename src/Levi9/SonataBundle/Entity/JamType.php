@@ -31,6 +31,8 @@ class JamType
     private $name;
 
     /**
+     * todo: better to have uni-directional relation from Jam to Type. Because other entities in system may also have Type.
+     * 
      * @ORM\OneToMany(targetEntity="Levi9\SonataBundle\Entity\Jam", mappedBy="type")
      * @var Jam[]
      */
