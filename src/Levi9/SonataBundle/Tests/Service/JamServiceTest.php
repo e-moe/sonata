@@ -11,6 +11,9 @@ class JamServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testDuplicate($count, $expectedCount)
     {
+        //todo: actually, this test is not testing, whether Jam was cloned or not.
+        //To test clone method: create "clone" factory. It will have only one method with "clone" operator.
+        // inject that service into Jam service. Expect, that clone method was called N times.
         $jam = $this->getMock('\Levi9\SonataBundle\Entity\Jam');
 
         $em = $this->getMockBuilder('\Doctrine\ORM\EntityManager')
@@ -35,6 +38,7 @@ class JamServiceTest extends \PHPUnit_Framework_TestCase
     public function duplicateProvider()
     {
         return array(
+            //todo: this case is not real. You may not test it
             array(-5, 0),
             array(0, 0),
             array(1, 1),
