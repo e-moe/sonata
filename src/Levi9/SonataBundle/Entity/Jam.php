@@ -32,7 +32,7 @@ class Jam
     private $comment;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Levi9\SonataBundle\Entity\JamType", inversedBy="jam")
+     * @ORM\ManyToOne(targetEntity="Levi9\SonataBundle\Entity\JamType")
      * @ORM\JoinColumn(nullable=false)
      * @var JamType
      */

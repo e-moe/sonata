@@ -3,8 +3,6 @@
 namespace Levi9\SonataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
-use Levi9\SonataBundle\Entity\Jam;
 
 /**
  * JamType
@@ -29,19 +27,6 @@ class JamType
      * @ORM\Column(name="name", type="string", length=50, unique=true)
      */
     private $name;
-
-    /**
-     * todo: better to have uni-directional relation from Jam to Type. Because other entities in system may also have Type.
-     * 
-     * @ORM\OneToMany(targetEntity="Levi9\SonataBundle\Entity\Jam", mappedBy="type")
-     * @var Jam[]
-     */
-    protected $jam;
-
-    public function __construct()
-    {
-        $this->jam = new ArrayCollection();
-    }
 
     /**
      * @return string
@@ -82,13 +67,5 @@ class JamType
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * @return Jam[]
-     */
-    public function getJam()
-    {
-        return $this->jam;
     }
 }

@@ -4,15 +4,20 @@ namespace Levi9\SonataBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 use Levi9\SonataBundle\Entity\Jam;
+use Levi9\SonataBundle\Service\CloneService;
 
 class JamService
 {
     /** @var EntityManager */
     protected $em;
 
-    public function __construct(EntityManager $entityManager)
+    /** @var CloneService */
+    protected $cloneService;
+
+    public function __construct(EntityManager $entityManager, CloneService $cloneService)
     {
         $this->em = $entityManager;
+        $this->cloneService = $cloneService;
     }
 
     /**
@@ -27,7 +32,7 @@ class JamService
     public function duplicate(Jam $entity, $count = 0)
     {
         for ($i = 0; $i < $count; $i++) {
-            $this->em->persist(clone $entity);
+            $this->em->persist($this->cloneService->cloneObject($entity));
         }
         $this->em->flush();
     }

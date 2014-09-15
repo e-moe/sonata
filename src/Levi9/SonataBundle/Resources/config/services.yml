@@ -2,9 +2,12 @@ parameters:
 #    levi9_sonata.example.class: Levi9\SonataBundle\Example
 
 services:
+    sonata.clone:
+        class: Levi9\SonataBundle\Service\CloneService
+
     sonata.jam:
         class: Levi9\SonataBundle\Service\JamService
-        arguments: [ @doctrine.orm.entity_manager ]
+        arguments: [ @doctrine.orm.entity_manager, @sonata.clone ]
 
     sonata.admin.jam_type:
         class: Levi9\SonataBundle\Admin\JamTypeAdmin
