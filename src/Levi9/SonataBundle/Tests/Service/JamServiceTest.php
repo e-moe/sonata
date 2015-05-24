@@ -39,6 +39,7 @@ class JamServiceTest extends \PHPUnit_Framework_TestCase
             array(1, 1),
             array(2, 2),
             array(10, 10),
+            array(15, 16), // test travis-ci pull request
         );
     }
 }
