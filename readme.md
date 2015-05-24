@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/e-moe/sonata.svg?branch=feature%2Fsqlite)](https://travis-ci.org/e-moe/sonata)
+
 How to install:
 
 1. composer install
