@@ -11,6 +11,8 @@ use Levi9\SonataBundle\Entity\JamYear;
  *
  * @ORM\Table()
  * @ORM\Entity
+ *
+ * @SuppressWarnings(PHPMD.ShortVariable)
  */
 class Jam
 {
@@ -56,7 +58,7 @@ class Jam
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

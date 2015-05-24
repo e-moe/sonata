@@ -9,14 +9,14 @@ use Levi9\SonataBundle\Service\CloneService;
 class JamService
 {
     /** @var EntityManager */
-    protected $em;
+    protected $entityManager;
 
     /** @var CloneService */
     protected $cloneService;
 
     public function __construct(EntityManager $entityManager, CloneService $cloneService)
     {
-        $this->em = $entityManager;
+        $this->entityManager = $entityManager;
         $this->cloneService = $cloneService;
     }
 
@@ -32,8 +32,8 @@ class JamService
     public function duplicate(Jam $entity, $count = 0)
     {
         for ($i = 0; $i < $count; $i++) {
-            $this->em->persist($this->cloneService->cloneObject($entity));
+            $this->entityManager->persist($this->cloneService->cloneObject($entity));
         }
-        $this->em->flush();
+        $this->entityManager->flush();
     }
 }

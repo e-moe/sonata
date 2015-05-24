@@ -2,7 +2,9 @@ How to install:
 
 1. composer install
 
-2. php app/console doctrine:migrations:migrate
+2. php app/console doctrine:database:create
+
+3. php app/console doctrine:schema:update --force
 
 How to test:
 
@@ -11,3 +13,7 @@ How to test:
 2. ./bin/phpunit -c app/
 
 3. ./bin/phpcs --standard=PSR2 src/
+
+4. ./bin/phpcpd src/
+
+5. ./bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode

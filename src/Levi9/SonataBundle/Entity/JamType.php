@@ -9,6 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ *
+ * @SuppressWarnings(PHPMD.ShortVariable)
  */
 class JamType
 {
@@ -39,7 +41,7 @@ class JamType
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -62,7 +64,7 @@ class JamType
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {

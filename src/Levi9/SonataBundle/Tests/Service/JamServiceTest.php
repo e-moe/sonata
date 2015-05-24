@@ -18,16 +18,16 @@ class JamServiceTest extends \PHPUnit_Framework_TestCase
             ->method('cloneObject')
             ->with($jam);
 
-        $em = $this->getMockBuilder('\Doctrine\ORM\EntityManager')
+        $entityManager = $this->getMockBuilder('\Doctrine\ORM\EntityManager')
             ->disableOriginalConstructor()
             ->getMock();
-        $em->expects($this->exactly($expectedCount))
+        $entityManager->expects($this->exactly($expectedCount))
             ->method('persist');
-        $em->expects($this->once())
+        $entityManager->expects($this->once())
             ->method('flush');
 
 
-        $jamService = new JamService($em, $cloneService);
+        $jamService = new JamService($entityManager, $cloneService);
         $jamService->duplicate($jam, $count);
 
     }
